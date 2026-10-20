@@ -1,0 +1,8 @@
+<article class="product">
+  <a class="pic" href="<%= item[:url] %>" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><%= image_tag item[:image], alt: item[:alt], loading: "lazy" %></a>
+  <div class="info">
+    <h3><a href="<%= item[:url] %>" target="_blank" rel="noopener"><%= item[:title] %></a></h3>
+    <p><%= item[:blurb] %></p>
+    <p class="price"><%= item[:price] %> <span>on Etsy</span></p>
+  </div>
+</article>

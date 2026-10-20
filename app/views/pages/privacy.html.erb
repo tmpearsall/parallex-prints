@@ -1,0 +1,14 @@
+<% content_for :title, "Privacy" %>
+<%= render "shared/page_hero", eyebrow: "Your information", title: "Privacy", lede: "We collect very little." %>
+<div class="page"><div class="wrap"><div class="prose legal">
+  <p class="small">Effective October 20, 2026</p>
+  <p>This site has no accounts, no checkout and no forms, and it does not use analytics or advertising tools. It does not ask you for personal information.</p>
+  <h2>If you write to us</h2>
+  <p>If you email <a href="mailto:<%= Catalog::EMAIL %>"><%= Catalog::EMAIL %></a>, we receive your email address and what you send. We use it to answer you and to make what you ask for. We do not sell it or share it for advertising.</p>
+  <h2>Orders</h2>
+  <p>Purchases are made on Etsy, which handles payment and shipping details under its own privacy policy. We do not see your card number.</p>
+  <h2>Fonts and links</h2>
+  <p>This site loads its typefaces from Google Fonts, so your browser contacts Google when a page loads, and Google receives your IP address. Links to Etsy open Etsy's site.</p>
+  <h2>Contact</h2>
+  <p>Questions about this page: <a href="mailto:<%= Catalog::EMAIL %>"><%= Catalog::EMAIL %></a>.</p>
+</div></div></div>

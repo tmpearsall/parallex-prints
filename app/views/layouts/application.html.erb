@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= content_for?(:title) ? "#{yield(:title)} · Parallex Prints" : "Parallex Prints · Personalized 3D-printed coasters, watch stands and gifts" %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Custom 3D-printed coasters, Apple Watch stands, desk signs and gifts, made to order in Northern Virginia with your colors and your words." %>">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap bar">
+      <a class="brand" href="<%= root_path %>">
+        <%= image_tag "mark.png", alt: "", width: 40, height: 40, class: "mark" %>
+        <span>Parallex Prints</span>
+      </a>
+      <nav aria-label="Main">
+        <%= link_to "Shop", shop_path %>
+        <%= link_to "Made to order", made_to_order_path %>
+        <%= link_to "About", about_path %>
+        <%= link_to "Shop on Etsy", Catalog::SHOP_URL, class: "btn small", target: "_blank", rel: "noopener" %>
+      </nav>
+    </div>
+  </header>
+  <main><%= yield %></main>
+  <footer class="foot">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <p class="foot-brand"><%= image_tag "mark.png", alt: "", width: 28, height: 28 %> Parallex Prints</p>
+          <p>Personalized things, printed one at a time, in Northern Virginia.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><%= link_to "Shop", shop_path %></li>
+            <li><%= link_to "Made to order", made_to_order_path %></li>
+            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "Privacy", privacy_path %></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Say hello</h4>
+          <p><a href="mailto:<%= Catalog::EMAIL %>"><%= Catalog::EMAIL %></a></p>
+          <p><%= link_to "Our Etsy shop", Catalog::SHOP_URL, target: "_blank", rel: "noopener" %></p>
+        </div>
+      </div>
+      <div class="fine"><span>© <%= Date.current.year %> Parallex Prints LLC</span><span>Made to order in Virginia</span></div>
+    </div>
+  </footer>
+</body>
+</html>

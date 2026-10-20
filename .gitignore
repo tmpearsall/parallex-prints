@@ -1,0 +1,22 @@
+# Secrets and local state
+/config/master.key
+/config/credentials/*.key
+.env*
+!.env.example
+
+# Logs, temp, caches
+/log/*
+!/log/.keep
+/tmp/*
+!/tmp/.keep
+/tmp/pids/*
+!/tmp/pids/.keep
+
+# Dependencies and build output
+/vendor/bundle
+/node_modules
+/public/assets
+/storage/*
+.bundle
+
+.DS_Store

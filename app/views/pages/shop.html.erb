@@ -1,0 +1,14 @@
+<% content_for :title, "Shop" %>
+<%= render "shared/page_hero", eyebrow: "Everything we list", title: "Shop", lede: "Buy through our Etsy shop. Every item links straight to its listing." %>
+<div class="page"><div class="wrap">
+  <% @sections.each do |section, items| %>
+    <h2 class="section-title"><%= section %></h2>
+    <div class="products">
+      <% items.each do |item| %><%= render "shared/product", item: item %><% end %>
+    </div>
+  <% end %>
+  <div class="cta-band">
+    <div><h3>Looking for something that isn't here?</h3><p>We print custom pieces that never get listed.</p></div>
+    <%= link_to "Made to order", made_to_order_path, class: "btn" %>
+  </div>
+</div></div>

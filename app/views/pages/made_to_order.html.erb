@@ -1,0 +1,27 @@
+<% content_for :title, "Made to order" %>
+<%= render "shared/page_hero", eyebrow: "Custom work", title: "Made to order", lede: "Some of what we print is never listed. If you can describe it, ask." %>
+<div class="page"><div class="wrap two">
+  <div class="prose">
+    <h2>What you can ask for</h2>
+    <ul>
+      <li><b>Coasters</b> with a name, a date, a quote or a logo, for a home, a wedding, an event or a business.</li>
+      <li><b>Desk signs, plaques and name tags</b> for an office or a front desk.</li>
+      <li><b>Watch stands</b> with your own text on the base.</li>
+      <li><b>Gifts for a team or a client,</b> in your colors, in the quantity you need.</li>
+    </ul>
+    <h2>How it works</h2>
+    <ol>
+      <li>Tell us what you have in mind: what it is, how many, and by when.</li>
+      <li>Pick up to two colors and send us your text or your logo.</li>
+      <li>We show you what it will look like before we print.</li>
+      <li>We print it to order and send it.</li>
+    </ol>
+    <p>We keep about fifteen colors of filament on hand. Everything is printed in PLA.</p>
+  </div>
+  <aside class="card">
+    <h3>Start a conversation</h3>
+    <p>Write to us and tell us what you need. We reply to every message.</p>
+    <p><a class="btn" href="mailto:<%= Catalog::EMAIL %>?subject=Custom%20order">Email <%= Catalog::EMAIL %></a></p>
+    <p class="small">Or send a custom-order request through our <%= link_to "Etsy shop", Catalog::SHOP_URL, target: "_blank", rel: "noopener" %>.</p>
+  </aside>
+</div></div>
