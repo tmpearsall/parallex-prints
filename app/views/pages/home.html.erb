@@ -1,19 +1,27 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow">Made to order in Northern Virginia</p>
-      <h1>Personalized things, printed one at a time.</h1>
-      <p class="lede">Coasters, watch stands, desk signs and gifts, made with your colors and your words.</p>
+      <p class="eyebrow">A small family shop in Northern Virginia</p>
+      <h1>Made at our desk, just for you.</h1>
+      <p class="lede">Coasters, watch stands, desk signs and gifts, printed one at a time with your colors and your words.</p>
       <div class="actions">
         <%= link_to "Shop on Etsy", Catalog::SHOP_URL, class: "btn", target: "_blank", rel: "noopener" %>
         <%= link_to "Ask for something custom", made_to_order_path, class: "btn ghost" %>
       </div>
     </div>
-    <div class="hero-photo"><%= image_tag "photos/watch-stands-group.jpg", alt: "Five Apple Watch stands in blue, tan, purple and orange on a white table" %></div>
+    <figure class="snap"><%= image_tag "photos/our-desk.jpg", alt: "A purple Apple Watch stand with the name Troy on it, on a wooden desk next to a tin bucket" %><figcaption>A watch stand with a name on it, on our desk</figcaption></figure>
   </div>
 </section>
 
 <section class="block">
+  <div class="wrap hello">
+    <p class="eyebrow">Hello from the shop</p>
+    <h2>Every piece is printed here, for one person at a time.</h2>
+    <p>We are a small family business. We print on our own machines, we keep about fifteen colors on the shelf, and we are happy to talk an idea through before we print it.</p>
+  </div>
+</section>
+
+<section class="block alt">
   <div class="wrap">
     <p class="eyebrow">A few favorites</p>
     <h2>Made for your desk, your table and your gifts.</h2>
@@ -24,7 +32,7 @@
   </div>
 </section>
 
-<section class="block alt">
+<section class="block">
   <div class="wrap two">
     <div>
       <p class="eyebrow">How it works</p>
@@ -44,7 +52,7 @@
   </div>
 </section>
 
-<section class="block">
+<section class="block alt">
   <div class="wrap">
     <p class="eyebrow">Art by Lena</p>
     <h2>Original paintings, printed as coasters.</h2>
