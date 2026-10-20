@@ -2,6 +2,7 @@
 # Each listing is a plain hash; there is no database. Edit this file when the Etsy shop changes.
 class Catalog
   SHOP_URL = "https://www.etsy.com/shop/ParallexPrints".freeze
+  FACEBOOK_URL = "https://www.facebook.com/people/Parallex-Prints/61584590646144/".freeze
   EMAIL = "info@parallexprints.com".freeze
 
   ITEMS = [
