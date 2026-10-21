@@ -86,7 +86,7 @@ nav a:hover{color:var(--purple)}
 /* footer */
 .foot{background:var(--sand);color:var(--mute);padding:56px 0 34px;font-size:15.5px;border-top:3px solid var(--lilac)}
 .foot a{color:var(--purple-deep)}
-.foot .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.foot .grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.3fr;gap:32px}
 .foot h4{color:var(--purple-deep);font:700 1.3rem var(--hand);margin:0 0 8px}
 .foot ul{list-style:none;margin:0;padding:0}.foot li{margin:6px 0}
 .foot-brand{display:flex;align-items:center;gap:8px;font:600 1.15rem var(--head);color:var(--purple-deep);margin:0 0 8px}
