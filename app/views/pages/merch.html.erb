@@ -1,0 +1,33 @@
+<% content_for :title, "Merch for your brand" %>
+<% content_for :description, "Custom merch for teams, clubs, campaigns, organizations and companies: coasters and desk items with your logo, plus shirts, mugs and tumblers." %>
+<%= render "shared/page_hero", eyebrow: "Teams, campaigns and companies", title: "Your brand, on things people keep.", lede: "If you have a logo, we can put it on merch." %>
+<div class="page"><div class="wrap">
+  <div class="three-up">
+    <div class="card"><h3>Teams and clubs</h3><p>Leagues, teams and clubs ask for coasters with the team logo set into the center, and for shirts and drinkware in team colors.</p></div>
+    <div class="card"><h3>Campaigns and organizations</h3><p>Coasters, magnets and shirts with a name or a logo, made in the quantity you need, on your timeline.</p></div>
+    <div class="card"><h3>Companies</h3><p>Branded coasters, desk signs and gifts for a team, a client or an event, in your colors.</p></div>
+  </div>
+
+  <div class="two" style="margin-top:56px">
+    <div class="prose">
+      <h2>What we make</h2>
+      <ul>
+        <li><b>Coasters with your logo.</b> We print the coaster and set your logo in as an insert.</li>
+        <li><b>Desk items and signs.</b> Plaques, name tags and desk pieces, printed in your colors.</li>
+        <li><b>Shirts, mugs, tumblers and more.</b> Made through a trusted partner of ours, so one order can cover all of it.</li>
+      </ul>
+      <h2>How it works</h2>
+      <ol>
+        <li>Send us your logo and tell us what you need, how many, and by when.</li>
+        <li>We show you what it will look like before we make it.</li>
+        <li>We make it to order and send it.</li>
+      </ol>
+      <p>Each job is priced on its own, after we talk. Pick up to two colors from our palette for printed pieces.</p>
+    </div>
+    <aside class="card">
+      <h3>Tell us about your brand</h3>
+      <p>Write to us with your logo and what you have in mind. We are happy to talk it through.</p>
+      <p><a class="btn" href="mailto:<%= Catalog::EMAIL %>?subject=Merch">Email <%= Catalog::EMAIL %></a></p>
+    </aside>
+  </div>
+</div></div>

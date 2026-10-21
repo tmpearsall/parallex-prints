@@ -7,6 +7,7 @@ class PagesController < ApplicationController
     @sections = Catalog.sections
   end
 
+  def merch; end
   def made_to_order; end
   def about; end
   def privacy; end
