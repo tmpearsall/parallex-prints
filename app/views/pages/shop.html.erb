@@ -1,5 +1,5 @@
 <% content_for :title, "Shop" %>
-<%= render "shared/page_hero", eyebrow: "Everything we list", title: "Shop", lede: "Buy through our Etsy shop. Every item links straight to its listing. You can also find us on Facebook." %>
+<%= render "shared/page_hero", eyebrow: "Everything we list", title: "Shop", lede: "Buy through our Etsy shop. Most items link straight to their listing. You can also find us on Facebook." %>
 <div class="page"><div class="wrap">
   <% @sections.each do |section, items| %>
     <h2 class="section-title"><%= section %></h2>
@@ -7,6 +7,17 @@
       <% items.each do |item| %><%= render "shared/product", item: item %><% end %>
     </div>
   <% end %>
+  <h2 class="section-title">For the holidays</h2>
+  <div class="products">
+    <article class="product">
+      <a class="pic" href="<%= made_to_order_path(anchor: "request") %>" tabindex="-1" aria-hidden="true"><%= image_tag "photos/gingerbread-trio.jpg", alt: "Three flat gingerbread figures with white icing lines and red and green buttons, one surprised, one cross and one smiling", loading: "lazy" %></a>
+      <div class="info">
+        <h3><a href="<%= made_to_order_path(anchor: "request") %>">Gingerbread Figures</a></h3>
+        <p>Dark brown gingerbread figures with white icing lines and red and green buttons, each with its own face. Designed for the holidays.</p>
+        <p class="price">Ask us <span>not listed on Etsy yet</span></p>
+      </div>
+    </article>
+  </div>
   <div class="cta-band">
     <div><h3>Looking for something that isn't here?</h3><p>We print custom pieces that never get listed.</p></div>
     <%= link_to "Made to order", made_to_order_path, class: "btn" %>
