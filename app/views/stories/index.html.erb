@@ -1,0 +1,20 @@
+<% content_for :title, "Stories" %>
+<%= render "shared/page_hero", eyebrow: "From the shop", title: "Stories", lede: "How things get made here, and the people and ideas behind them." %>
+<div class="page"><div class="wrap">
+  <% if @stories.empty? %>
+    <div class="card"><h3>Stories are coming soon.</h3><p>We are writing the first ones now. In the meantime, see <%= link_to "what we make", made_to_order_path %> or <%= link_to "ask us for something", merch_path %>.</p></div>
+  <% else %>
+    <div class="products">
+      <% @stories.each do |s| %>
+        <article class="product">
+          <% if s.image_url.present? %><a class="pic" href="<%= story_path(s) %>" tabindex="-1" aria-hidden="true"><img src="<%= s.image_url %>" alt="" loading="lazy"></a><% end %>
+          <div class="info">
+            <p class="small"><%= s.published_at.strftime("%B %-d, %Y") %></p>
+            <h3><a href="<%= story_path(s) %>"><%= s.title %></a></h3>
+            <p><%= truncate(s.summary.to_s, length: 140) %></p>
+          </div>
+        </article>
+      <% end %>
+    </div>
+  <% end %>
+</div></div>

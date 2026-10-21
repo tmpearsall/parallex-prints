@@ -1,0 +1,19 @@
+# The Prints site only reads its published stories, through a read-only login (prints_ro) on the Parallex
+# Supabase project. DATABASE_URL is set in Render. With no DATABASE_URL the Stories pages say "coming soon".
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS", 3) %>
+  prepared_statements: false
+  advisory_locks: false
+
+development:
+  <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
+
+test:
+  <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
+
+production:
+  <<: *default
+  url: <%= ENV["DATABASE_URL"] %>

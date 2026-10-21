@@ -1,0 +1,14 @@
+<% content_for :title, @story.title %>
+<% content_for :description, truncate(@story.summary.to_s, length: 150) %>
+<%= render "shared/page_hero", eyebrow: "A story from the shop", title: @story.title, lede: "#{@story.published_at.strftime('%B %-d, %Y')} · #{@story.author.presence || 'Parallex Prints'} · #{@story.minutes} min read" %>
+<div class="page"><div class="wrap">
+  <% if @story.image_url.present? %><div class="story-cover"><img src="<%= @story.image_url %>" alt=""></div><% end %>
+  <article class="story-body">
+    <%= sanitize(@story.body.to_s, tags: %w[p ol ul li strong em a sup sub img figure figcaption h2 h3 blockquote br], attributes: %w[href src alt class id]) %>
+  </article>
+  <div class="cta-band">
+    <div><h3>Have an idea of your own?</h3><p>We are happy to talk it through.</p></div>
+    <%= link_to "Made to order", made_to_order_path, class: "btn" %>
+  </div>
+  <p><%= link_to "← All stories", stories_path %></p>
+</div></div>

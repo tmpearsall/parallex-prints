@@ -1,3 +1,4 @@
 #!/bin/bash -e
 
+# No database setup here: the site only reads published stories through a read-only login.
 exec "${@}"
