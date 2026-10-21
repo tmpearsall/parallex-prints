@@ -8,7 +8,9 @@ class PagesController < ApplicationController
   end
 
   def merch; end
-  def made_to_order; end
+  def made_to_order
+    @request = PrintRequest.new
+  end
   def about; end
   def privacy; end
 end

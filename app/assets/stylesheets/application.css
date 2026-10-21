@@ -113,3 +113,7 @@ nav a:hover{color:var(--purple)}
 .story-body blockquote{margin:1.4em 0;padding:4px 0 4px 20px;border-left:3px solid var(--lilac);color:var(--purple-deep);font-style:italic}
 .story-body figure{margin:1.4em 0}.story-body figcaption{font-size:.9rem;color:var(--mute)}
 .story-body+.cta-band{max-width:40em;margin-left:auto;margin-right:auto}
+.request-form{display:grid;gap:14px;margin:14px 0}
+.request-form label{display:grid;gap:6px;font:700 14px var(--sans);color:var(--purple-deep)}
+.request-form input[type=text],.request-form input[type=email],.request-form textarea{font:400 16px var(--sans);padding:11px 13px;border:2px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);width:100%;box-sizing:border-box}
+.request-form input:focus,.request-form textarea:focus{outline:none;border-color:var(--lilac)}

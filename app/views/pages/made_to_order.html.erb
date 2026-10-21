@@ -42,10 +42,24 @@
     <%= render "shared/palette" %>
     <p>Pick up to two. Our pieces are printed in PLA.</p>
   </div>
-  <aside class="card">
-    <h3>Start a conversation</h3>
-    <p>Write to us and tell us what you need. We are happy to talk it through.</p>
-    <p><a class="btn" href="mailto:<%= Catalog::EMAIL %>?subject=Custom%20order">Email <%= Catalog::EMAIL %></a></p>
-    <p class="small">Or send a custom-order request through our <%= link_to "Etsy shop", Catalog::SHOP_URL, target: "_blank", rel: "noopener" %>.</p>
+  <aside class="card" id="request">
+    <% if params[:sent].present? %>
+      <h3>Thank you</h3>
+      <p>We have your request and will write back to you by email, usually within a day or two.</p>
+    <% else %>
+      <h3>Describe what you need</h3>
+      <p>Tell us what it is, how many, and by when. We will write back with questions and a price before we print anything.</p>
+      <% if @request&.errors&.any? %><p class="small"><b><%= @request.errors.full_messages.to_sentence %></b></p><% end %>
+      <%= form_with model: @request, url: made_to_order_path, scope: :print_request, class: "request-form" do |f| %>
+        <label>Your name<%= f.text_field :name, required: true, maxlength: 200, autocomplete: "name" %></label>
+        <label>Your email<%= f.email_field :email, required: true, maxlength: 320, autocomplete: "email" %></label>
+        <label>What would you like?<%= f.text_area :description, required: true, rows: 6, maxlength: 5000, placeholder: "For example: 12 team coasters with our logo in purple and gold" %></label>
+        <label>How many?<%= f.text_field :quantity, maxlength: 200 %></label>
+        <label>Needed by<%= f.text_field :needed_by, maxlength: 200, placeholder: "A date, or no rush" %></label>
+        <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <%= f.submit "Send request", class: "btn" %>
+      <% end %>
+      <p class="small">Prefer email? Write to <a href="mailto:<%= Catalog::EMAIL %>?subject=Custom%20order"><%= Catalog::EMAIL %></a>, or use our <%= link_to "Etsy shop", Catalog::SHOP_URL, target: "_blank", rel: "noopener" %>. We use what you send only to answer your request.</p>
+    <% end %>
   </aside>
 </div></div>
