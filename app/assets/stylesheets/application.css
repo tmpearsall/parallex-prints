@@ -95,3 +95,8 @@ nav a:hover{color:var(--purple)}
 @media(max-width:860px){.hero-grid,.two,.foot .grid{grid-template-columns:1fr;gap:36px}.hero-grid{padding-top:48px;padding-bottom:56px}.block{padding:60px 0}.snap{transform:none}}
 @media(max-width:700px){nav a:not(.btn){display:none}.wrap{padding:0 20px}.products,.products.three,.page .products{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.two-up{grid-template-columns:1fr 1fr;margin:14px 0 18px}.two-up img{width:100%;aspect-ratio:3/4;object-fit:cover;transform:none!important}
+@media(max-width:560px){.two-up{grid-template-columns:1fr}}
+
+.two-up.wide img{aspect-ratio:auto;object-fit:contain}
