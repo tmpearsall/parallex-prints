@@ -1,0 +1,6 @@
+<ul class="palette" aria-label="Our colors">
+  <% [["Black","#1f1f22"],["White","#f4f2ec"],["Grey","#8b8e93"],["Navy","#21305c"],["Tan","#c8a77c"],["Chocolate brown","#4b3024"],["Ruby red","#9b1424"]].each do |name,hex| %>
+    <li><span class="sw" style="background:<%= hex %>"></span><%= name %></li>
+  <% end %>
+</ul>
+<p class="small">Colors on screen are approximate.</p>

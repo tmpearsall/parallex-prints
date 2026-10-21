@@ -27,7 +27,7 @@
       <%= image_tag "photos/tall-stand-blue-front.jpg", alt: "A light blue watch stand on a round base with two brackets stacked on the column and text on the base", loading: "lazy" %>
       <%= image_tag "photos/tall-stand-blue-side.jpg", alt: "The same light blue stand seen from the side, showing the two brackets", loading: "lazy" %>
     </div>
-    <p>Two brackets stacked on one column, standing on a round base with your own text. Shown here in light blue; we have about fifteen colors.</p>
+    <p>Two brackets stacked on one column, standing on a round base with your own text. Shown here in light blue.</p>
     <h2>How it works</h2>
     <ol>
       <li>Tell us what you have in mind: what it is, how many, and by when.</li>
@@ -35,7 +35,9 @@
       <li>We show you what it will look like before we print.</li>
       <li>We print it to order and send it.</li>
     </ol>
-    <p>We keep about fifteen colors of filament on hand. Everything is printed in PLA.</p>
+    <h2>Our colors</h2>
+    <%= render "shared/palette" %>
+    <p>Pick up to two. Our pieces are printed in PLA.</p>
   </div>
   <aside class="card">
     <h3>Start a conversation</h3>
