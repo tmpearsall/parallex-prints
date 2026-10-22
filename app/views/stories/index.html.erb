@@ -9,7 +9,7 @@
         <article class="product">
           <% if s.image_url.present? %><a class="pic" href="<%= story_path(s) %>" tabindex="-1" aria-hidden="true"><img src="<%= s.image_url %>" alt="" loading="lazy"></a><% end %>
           <div class="info">
-            <p class="small"><%= s.published_at.strftime("%B %-d, %Y") %></p>
+            <p class="small"><%= s.published_at.strftime("%B %-d, %Y") %> &middot; <%= s.minutes %> min read</p>
             <h3><a href="<%= story_path(s) %>"><%= s.title %></a></h3>
             <p><%= truncate(s.summary.to_s, length: 140) %></p>
           </div>
