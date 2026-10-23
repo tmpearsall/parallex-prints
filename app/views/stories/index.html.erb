@@ -11,7 +11,7 @@
           <div class="info">
             <p class="small"><%= s.published_at.strftime("%B %-d, %Y") %> &middot; <%= s.minutes %> min read</p>
             <h3><a href="<%= story_path(s) %>"><%= s.title %></a></h3>
-            <p><%= truncate(s.summary.to_s, length: 140) %></p>
+            <p><%= truncate(s.summary.to_s, length: 320) %></p>
           </div>
         </article>
       <% end %>
