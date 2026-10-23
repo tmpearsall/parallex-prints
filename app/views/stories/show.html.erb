@@ -1,5 +1,7 @@
 <% content_for :title, @story.title %>
 <% content_for :description, truncate(@story.summary.to_s, length: 150) %>
+<% content_for :og_image, @story.image_url if @story.image_url.present? %>
+<% content_for :og_type, "article" %>
 <%= render "shared/page_hero", eyebrow: "A story from the shop", title: @story.title, lede: "#{@story.published_at.strftime('%B %-d, %Y')} · #{@story.author.presence || 'Parallex Prints'} · #{@story.minutes} min read" %>
 <div class="page"><div class="wrap">
   <% if @story.image_url.present? %><div class="story-cover"><img src="<%= @story.image_url %>" alt=""></div><% end %>
