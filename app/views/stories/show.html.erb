@@ -3,10 +3,16 @@
 <% content_for :og_image, @story.image_url if @story.image_url.present? %>
 <% content_for :og_type, "article" %>
 <%= render "shared/page_hero", eyebrow: "A story from the shop", title: @story.title, lede: "#{@story.published_at.strftime('%B %-d, %Y')} · #{@story.author.presence || 'Parallex Prints'} · #{@story.minutes} min read" %>
+<% allowed = { tags: %w[p ol ul li strong em a sup sub img figure figcaption h2 h3 blockquote br], attributes: %w[href src alt class id] } %>
+<%# A reviewer's introduction (a leading blockquote.reviewer-intro that ends with "Intro by <name>, reviewer.") is shown before the cover image. %>
+<% body_html = @story.body.to_s %>
+<% intro_html = body_html[/\A\s*<blockquote class="reviewer-intro">.*?<\/blockquote>/m] %>
+<% body_html = body_html.sub(intro_html, "") if intro_html %>
 <div class="page"><div class="wrap">
+  <% if intro_html %><div class="story-body"><%= sanitize(intro_html, allowed) %></div><% end %>
   <% if @story.image_url.present? %><div class="story-cover"><img src="<%= @story.image_url %>" alt=""></div><% end %>
   <article class="story-body">
-    <%= sanitize(@story.body.to_s, tags: %w[p ol ul li strong em a sup sub img figure figcaption h2 h3 blockquote br], attributes: %w[href src alt class id]) %>
+    <%= sanitize(body_html, allowed) %>
   </article>
   <div class="cta-band">
     <div><h3>Have an idea of your own?</h3><p>We are happy to talk it through.</p></div>
