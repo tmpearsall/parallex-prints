@@ -7,7 +7,8 @@
   <%# Link previews (LinkedIn, Facebook, X): title, description and image for every page; a story or shop page sets its own image with content_for :og_image. %>
   <% og_title = content_for?(:title) ? "#{content_for(:title)} · Parallex Prints" : "Parallex Prints" %>
   <% og_desc = content_for?(:description) ? content_for(:description) : "Custom 3D-printed coasters, Apple Watch stands, desk signs and gifts, made to order in Northern Virginia with your colors and your words." %>
-  <% og_image = content_for?(:og_image) ? content_for(:og_image) : "#{request.base_url}/apple-touch-icon.png" %>
+  <% og_image = content_for?(:og_image) ? content_for(:og_image).to_s : "#{request.base_url}/apple-touch-icon.png" %>
+  <% og_image = request.base_url + og_image if og_image.start_with?("/") %>
   <meta property="og:site_name" content="Parallex Prints">
   <meta property="og:type" content="<%= content_for?(:og_type) ? content_for(:og_type) : 'website' %>">
   <meta property="og:title" content="<%= og_title %>">
